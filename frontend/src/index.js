@@ -17,6 +17,7 @@ import ProfileArticles from "./routes/Profile/ProfileArticles";
 import ProfileFavArticles from "./routes/Profile/ProfileFavArticles";
 import Settings from "./routes/Settings";
 import SignUp from "./routes/SignUp";
+import './realworld-theme.css';
 
 ReactDOM.render(
   <React.StrictMode>

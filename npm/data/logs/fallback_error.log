@@ -1,0 +1,6 @@
+2026/11/01 21:26:27 [warn] 306#306: 512 worker_connections are not enough, reusing connections
+2026/11/01 21:26:27 [warn] 307#307: 512 worker_connections are not enough, reusing connections
+2026/11/01 21:26:29 [warn] 307#307: 512 worker_connections are not enough, reusing connections
+2026/11/01 21:26:29 [warn] 306#306: 512 worker_connections are not enough, reusing connections
+2026/11/01 21:26:35 [warn] 306#306: 512 worker_connections are not enough, reusing connections
+2026/11/01 21:26:35 [warn] 307#307: 512 worker_connections are not enough, reusing connections

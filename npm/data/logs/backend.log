@@ -1,0 +1,381 @@
+2026-10-22T12:42:53.105Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-10-22T12:42:53.215Z INFO    [Global] Creating a new JWT key pair...
+2026-10-22T12:42:53.359Z INFO    [Global] Wrote JWT key pair to config file: /data/keys.json
+2026-10-22T12:42:53.630Z INFO    [Migrate] Current database version: none
+2026-10-22T12:42:53.714Z INFO    [Migrate] [initial-schema] Migrating Up...
+2026-10-22T12:42:53.716Z INFO    [Migrate] [initial-schema] auth Table created
+2026-10-22T12:42:53.717Z INFO    [Migrate] [initial-schema] user Table created
+2026-10-22T12:42:53.718Z INFO    [Migrate] [initial-schema] user_permission Table created
+2026-10-22T12:42:53.719Z INFO    [Migrate] [initial-schema] proxy_host Table created
+2026-10-22T12:42:53.720Z INFO    [Migrate] [initial-schema] redirection_host Table created
+2026-10-22T12:42:53.721Z INFO    [Migrate] [initial-schema] dead_host Table created
+2026-10-22T12:42:53.722Z INFO    [Migrate] [initial-schema] stream Table created
+2026-10-22T12:42:53.723Z INFO    [Migrate] [initial-schema] access_list Table created
+2026-10-22T12:42:53.723Z INFO    [Migrate] [initial-schema] certificate Table created
+2026-10-22T12:42:53.724Z INFO    [Migrate] [initial-schema] access_list_auth Table created
+2026-10-22T12:42:53.725Z INFO    [Migrate] [initial-schema] audit_log Table created
+2026-10-22T12:42:53.725Z INFO    [Migrate] [websockets] Migrating Up...
+2026-10-22T12:42:53.727Z INFO    [Migrate] [websockets] proxy_host Table altered
+2026-10-22T12:42:53.727Z INFO    [Migrate] [forward_host] Migrating Up...
+2026-10-22T12:42:53.729Z INFO    [Migrate] [forward_host] proxy_host Table altered
+2026-10-22T12:42:53.729Z INFO    [Migrate] [http2_support] Migrating Up...
+2026-10-22T12:42:53.730Z INFO    [Migrate] [http2_support] proxy_host Table altered
+2026-10-22T12:42:53.730Z INFO    [Migrate] [http2_support] redirection_host Table altered
+2026-10-22T12:42:53.731Z INFO    [Migrate] [http2_support] dead_host Table altered
+2026-10-22T12:42:53.731Z INFO    [Migrate] [forward_scheme] Migrating Up...
+2026-10-22T12:42:53.732Z INFO    [Migrate] [forward_scheme] proxy_host Table altered
+2026-10-22T12:42:53.733Z INFO    [Migrate] [disabled] Migrating Up...
+2026-10-22T12:42:53.733Z INFO    [Migrate] [disabled] proxy_host Table altered
+2026-10-22T12:42:53.734Z INFO    [Migrate] [disabled] redirection_host Table altered
+2026-10-22T12:42:53.735Z INFO    [Migrate] [disabled] dead_host Table altered
+2026-10-22T12:42:53.735Z INFO    [Migrate] [disabled] stream Table altered
+2026-10-22T12:42:53.736Z INFO    [Migrate] [custom_locations] Migrating Up...
+2026-10-22T12:42:53.736Z INFO    [Migrate] [custom_locations] proxy_host Table altered
+2026-10-22T12:42:53.737Z INFO    [Migrate] [hsts] Migrating Up...
+2026-10-22T12:42:53.738Z INFO    [Migrate] [hsts] proxy_host Table altered
+2026-10-22T12:42:53.739Z INFO    [Migrate] [hsts] redirection_host Table altered
+2026-10-22T12:42:53.740Z INFO    [Migrate] [hsts] dead_host Table altered
+2026-10-22T12:42:53.740Z INFO    [Migrate] [settings] Migrating Up...
+2026-10-22T12:42:53.741Z INFO    [Migrate] [settings] setting Table created
+2026-10-22T12:42:53.742Z INFO    [Migrate] [access_list_client] Migrating Up...
+2026-10-22T12:42:53.742Z INFO    [Migrate] [access_list_client] access_list_client Table created
+2026-10-22T12:42:53.743Z INFO    [Migrate] [access_list_client] access_list Table altered
+2026-10-22T12:42:53.743Z INFO    [Migrate] [access_list_client_fix] Migrating Up...
+2026-10-22T12:42:53.745Z INFO    [Migrate] [access_list_client_fix] access_list Table altered
+2026-10-22T12:42:53.745Z INFO    [Migrate] [pass_auth] Migrating Up...
+2026-10-22T12:42:53.746Z INFO    [Migrate] [pass_auth] access_list Table altered
+2026-10-22T12:42:53.746Z INFO    [Migrate] [redirection_scheme] Migrating Up...
+2026-10-22T12:42:53.747Z INFO    [Migrate] [redirection_scheme] redirection_host Table altered
+2026-10-22T12:42:53.747Z INFO    [Migrate] [redirection_status_code] Migrating Up...
+2026-10-22T12:42:53.755Z INFO    [Migrate] [redirection_status_code] redirection_host Table altered
+2026-10-22T12:42:53.755Z INFO    [Migrate] [stream_domain] Migrating Up...
+2026-10-22T12:42:53.758Z INFO    [Migrate] [stream_domain] stream Table altered
+2026-10-22T12:42:53.758Z INFO    [Migrate] [stream_domain] Migrating Up...
+2026-10-22T12:42:53.759Z INFO    [Migrate] [stream_ssl] Migrating Up...
+2026-10-22T12:42:53.760Z INFO    [Migrate] [stream_ssl] stream Table altered
+2026-10-22T12:42:53.761Z INFO    [Migrate] [redirect_auto_scheme] Migrating Up...
+2026-10-22T12:42:53.773Z INFO    [Migrate] [redirect_auto_scheme] redirection_host Table altered
+2026-10-22T12:42:53.774Z INFO    [Migrate] [trust_forwarded_proto] Migrating Up...
+2026-10-22T12:42:53.774Z INFO    [Migrate] [trust_forwarded_proto] proxy_host Table altered
+2026-10-22T12:42:53.806Z INFO    [Setup] Default settings added
+2026-10-22T12:42:53.807Z INFO    [Setup] Logrotate Timer initialized
+2026-10-22T12:42:53.822Z INFO    [Setup] Logrotate completed.
+2026-10-22T12:42:53.913Z INFO    [Global] IP Ranges fetch is enabled
+2026-10-22T12:42:53.914Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-22T12:42:53.915Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-22T12:42:53.997Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-22T12:42:54.027Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-22T12:42:54.065Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-10-22T12:42:54.066Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-22T12:42:54.070Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-10-22T12:42:54.073Z INFO    [SSL] Completed SSL cert renew process
+2026-10-22T12:42:54.074Z INFO    [Global] Backend PID 230 listening on port 3000 ...
+2026-10-22T12:49:17.208Z INFO    [Express] Creating a new user in setup mode
+2026-10-22T12:49:18.993Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T12:56:09.141Z INFO    [Nginx] Reloading Nginx
+2026-10-22T13:04:35.509Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T13:19:41.629Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T13:20:43.071Z INFO    [Nginx] Reloading Nginx
+2026-10-22T13:27:25.956Z INFO    [SSL] Writing Custom Certificate: {"id":1,"expires_on":"2027-10-22 12:37:34","domain_names":[":"],"meta":{"certificate":"-----BEGIN CERTIFICATE-----\r\nMIIC+TCCAeGgAwIBAgIULBXERi9+J7H1Jqi53wEobajq5FIwDQYJKoZIhvcNAQEL\r\nBQAwDDEKMAgGA1UEAwwBOjAeFw0yNjEwMjIxMjM3MzRaFw0yNzEwMjIxMjM3MzRa\r\nMAwxCjAIBgNVBAMMATowggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDI\r\n3Y9myc2pe61R2QD7OXMgbzYLdixH0LBhtpNRPZQcgVhUC+g3+IS29a3OnlEGeuXm\r\nelMKtiQBaeU6UbTF6i8JWhogtgFwplcoUKYw5i0b+DWLyPHkwUP4H7toi1a2+SXH\r\nA53I28/awTlWn3e3YhLwAEdFF/6GtX+H4FbHgTolo6KQwu6PiWVPi9S5vF8OklIO\r\nmEskYsBzmSpNkn2QNUKM8CEP6ycKH246QAbGb8BlrTgxRkW5utj0njYd6Ppbu7j6\r\n1SLsstcfOTFSk7IWlNMuXRTukikGkMy4NBT+H/lewJnQJOaBq0Jju2HB9KAuCC+R\r\n1sNG9y7u/4J59smmp/LdAgMBAAGjUzBRMB0GA1UdDgQWBBScAIczZy429/S9pYNI\r\nIDSbxI7KWTAfBgNVHSMEGDAWgBScAIczZy429/S9pYNIIDSbxI7KWTAPBgNVHRMB\r\nAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQAxOYHY4wU5IydxoKQ4UbTqhy2W\r\nl0hNJyfwoEJ9xK10l2cZFH6R62X/bFFVLLXetaZ44ucRny23RtGMpGLpHVoy8h35\r\nM7RJFc2gmXbdElDyiNvJDtqrJNCgZobpC+kNVll7L5v2pAqILwTKx+7jCLHu9N2E\r\nt8YJOw1XSZKN6aGbPMpXcYtfLqyUSC93Pabdmh04GB9XTR95X/wI5ZTmdyeWtLfU\r\n76aD6Q1z24D7MzAkDpAgHtxVeWiRSXAfqqCBrxgYvejliO5gz8tkCId7QSWbw/ho\r\n7irOp+Iema6b3g7mpmbHVN7/4OOkxTbbtFNf05U9RHDEcj20X4BDZj0ql3+z\r\n-----END CERTIFICATE-----","certificate_key":"-----BEGIN PRIVATE KEY-----\r\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDI3Y9myc2pe61R\r\n2QD7OXMgbzYLdixH0LBhtpNRPZQcgVhUC+g3+IS29a3OnlEGeuXmelMKtiQBaeU6\r\nUbTF6i8JWhogtgFwplcoUKYw5i0b+DWLyPHkwUP4H7toi1a2+SXHA53I28/awTlW\r\nn3e3YhLwAEdFF/6GtX+H4FbHgTolo6KQwu6PiWVPi9S5vF8OklIOmEskYsBzmSpN\r\nkn2QNUKM8CEP6ycKH246QAbGb8BlrTgxRkW5utj0njYd6Ppbu7j61SLsstcfOTFS\r\nk7IWlNMuXRTukikGkMy4NBT+H/lewJnQJOaBq0Jju2HB9KAuCC+R1sNG9y7u/4J5\r\n9smmp/LdAgMBAAECggEACtkoewkwIdSrpi19p5PRO3G2LgVKW/CR7h0RtMQKIUX9\r\nEsD34Dn8VPNM2Ulkn+B4VSvLG1t981OYTT+Hb173/l3O5nBeAIsDTwqYBzEPQ6Dy\r\np2OJaOzlMlvoX7uSydwH5ck0ttnkTnC8G4kOSqmx0yN4tesXVIgt5JVBqpG4pbqp\r\ntdBF1qC+diSwvD8MHcQ2kdhUa7LK28nEquPkFJO3cbh/V4xjjrr8Z0q1ChItducx\r\nkszWGD1Wt5Rmnj243BLXG73y9O39dmESt0QB9FxxlDtbJX/jxcU0FOM0UQIxmgfW\r\n4yu4LVlyx3UHsfY89jfPS2CfnDUyHpkZUeFBtpbRAwKBgQDqD/F3bvwzRnH7B/0y\r\nQX3D9zz9P2izCQXTfriJdEWuKY3mro2PUgDz8t1le/Oj27dtkkteuumBfAdwC99Q\r\nV+Eg1V0XsUkPXUbenoUX+KwrBmToa3UPTLW0OumGeaRfgqHUlDJaSIwURIKQwpYP\r\nhYsDRT9qfQVd5qzN+lBFuLOLZwKBgQDbsRjy/l8La9oabmPopZDutyIlpISyyQZg\r\ntI5yW4aPVHPVxU3j3tjIAoW4fNg3gsnRkJf3lr6cusuhUXrP0grlNFPwQ1Y5SJ26\r\n8AkpXoD7I2GihgEN45cMCuwVWuTvzcSDRYXjVeYRqxRHy2hVrdJM8OxU2/fLxIBG\r\n2mDuMD1pGwKBgHKM/vYewRsvHNVooYgY+T4RIC4o/Eqy3cEWQaYz225TM/lz8B/2\r\nWDUL5UKnmSPWgj0D3hMskt8mHlW92bruZ2W0Rm0z/LeiRO7q0eRbdZdQ982v2Yh1\r\nWHAubN+9ZK7BtgXdyY7Z9oRsyyGhueM6zj/5ggHR0fCU1nmwSdz1ehl9AoGAesDi\r\nyuu9GbmivYAPDTBt4iSrzNK3XtqaWLCqo1Vmw3GR49GCKyAaiu913lbLzYCj2hfs\r\nAejWCucI3tOTRsn7UoTBng9R/2IG2CxFQjtO4IStik1MC4GupYj4zxnhr+iOtDbF\r\nj/gwPJEWHOOYIb+lMV6w/t2GAPKEJpLg9FY6Ch8CgYA5OL3g6klp+3UKSSGWutrf\r\nIBpchPXExzRLb7Dqr09REmrXX4kdrlUOfKSwmP1Yzo3Je5VErSrqfgSpmYqyLZqg\r\n8HPkqwqUc4BgFIKcAUiXjlD2QgEV89xyUY6isu4iZeTcg2PVHyDd5sz83rfQG2Tj\r\n1Ah7bP6Nj132Aw8kKx8whw==\r\n-----END PRIVATE KEY-----"},"modified_on":"2026-10-22 13:27:25","created_on":"2026-10-22 13:27:25","owner_user_id":1,"provider":"other","nice_name":"RealWorldMockSSL"}
+2026-10-22T13:28:32.101Z INFO    [Nginx] Reloading Nginx
+2026-10-22T13:38:43.779Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T13:39:50.146Z INFO    [Nginx] Reloading Nginx
+2026-10-22T13:40:31.849Z INFO    [Nginx] Reloading Nginx
+2026-10-22T13:42:54.066Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-22T13:42:54.068Z INFO    [SSL] Completed SSL cert renew process
+2026-10-22T13:53:48.445Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T14:08:53.755Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T14:42:54.067Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-22T14:42:54.068Z INFO    [SSL] Completed SSL cert renew process
+2026-10-22T15:42:54.067Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-22T15:42:54.068Z INFO    [SSL] Completed SSL cert renew process
+2026-10-22T15:59:08.020Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T16:14:14.037Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T16:29:47.570Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T16:42:54.069Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-22T16:42:54.070Z INFO    [SSL] Completed SSL cert renew process
+2026-10-22T17:42:54.070Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-22T17:42:54.071Z INFO    [SSL] Completed SSL cert renew process
+2026-10-22T18:01:10.440Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-22T18:13:28.716Z INFO    [Global] PID 230 received SIGTERM
+2026-10-29T14:26:35.917Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-10-29T14:26:36.339Z INFO    [Migrate] Current database version: none
+2026-10-29T14:26:36.402Z INFO    [Setup] Logrotate Timer initialized
+2026-10-29T14:26:36.422Z INFO    [Setup] Logrotate completed.
+2026-10-29T14:26:36.530Z INFO    [Global] IP Ranges fetch is enabled
+2026-10-29T14:26:36.531Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-29T14:26:36.535Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-29T14:26:36.625Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-29T14:26:36.676Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-29T14:26:36.728Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-10-29T14:26:36.731Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-29T14:26:36.740Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-10-29T14:26:36.746Z INFO    [SSL] Completed SSL cert renew process
+2026-10-29T14:26:36.749Z INFO    [Global] Backend PID 233 listening on port 3000 ...
+2026-10-29T14:27:23.880Z INFO    [Global] PID 233 received SIGTERM
+2026-10-29T14:27:40.303Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-10-29T14:27:40.501Z INFO    [Migrate] Current database version: none
+2026-10-29T14:27:40.565Z INFO    [Setup] Logrotate Timer initialized
+2026-10-29T14:27:40.585Z INFO    [Setup] Logrotate completed.
+2026-10-29T14:27:40.726Z INFO    [Global] IP Ranges fetch is enabled
+2026-10-29T14:27:40.726Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-29T14:27:40.727Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-29T14:27:40.810Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-29T14:27:40.862Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-29T14:27:40.916Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-10-29T14:27:40.918Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-29T14:27:40.924Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-10-29T14:27:40.929Z INFO    [SSL] Completed SSL cert renew process
+2026-10-29T14:27:40.930Z INFO    [Global] Backend PID 229 listening on port 3000 ...
+2026-10-29T14:54:13.151Z INFO    [Global] PID 229 received SIGTERM
+2026-10-29T15:16:08.365Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-10-29T15:16:08.731Z INFO    [Migrate] Current database version: none
+2026-10-29T15:16:08.785Z INFO    [Setup] Logrotate Timer initialized
+2026-10-29T15:16:08.799Z INFO    [Setup] Logrotate completed.
+2026-10-29T15:16:08.904Z INFO    [Global] IP Ranges fetch is enabled
+2026-10-29T15:16:08.905Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-29T15:16:08.906Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-29T15:16:08.979Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-29T15:16:09.024Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-29T15:16:09.073Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-10-29T15:16:09.074Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-29T15:16:09.078Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-10-29T15:16:09.082Z INFO    [SSL] Completed SSL cert renew process
+2026-10-29T15:16:09.082Z INFO    [Global] Backend PID 232 listening on port 3000 ...
+2026-10-29T16:16:09.075Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-29T16:16:09.077Z INFO    [SSL] Completed SSL cert renew process
+2026-10-29T17:16:09.075Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-29T17:16:09.077Z INFO    [SSL] Completed SSL cert renew process
+2026-10-29T18:11:20.608Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-29T18:16:09.075Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-29T18:16:09.077Z INFO    [SSL] Completed SSL cert renew process
+2026-10-29T18:17:56.646Z INFO    [Nginx] Reloading Nginx
+2026-10-29T18:17:56.673Z INFO    [SSL] Requesting LetsEncrypt certificates for Cert #2: LAYODEVOPS.JO3.ORG
+2026-10-29T18:17:56.673Z INFO    [SSL] Command: certbot certonly -n --config /etc/letsencrypt.ini --work-dir /tmp/letsencrypt-lib --logs-dir /data/logs --cert-name npm-2 --agree-tos --authenticator webroot -m supertlux@gmail.com --preferred-challenges http --domains LAYODEVOPS.JO3.ORG
+2026-10-29T18:18:02.949Z INFO    [Nginx] Reloading Nginx
+2026-10-29T18:18:02.990Z WARN    [Express] Saving debug log to /data/logs/letsencrypt.log
+Some challenges have failed.
+Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /data/logs/letsencrypt.log or re-run Certbot with -v for more details.
+
+2026-10-29T18:18:39.348Z INFO    [Nginx] Reloading Nginx
+2026-10-29T18:18:39.374Z INFO    [SSL] Requesting LetsEncrypt certificates for Cert #3: LAYODEVOPS.JO3.ORG
+2026-10-29T18:18:39.374Z INFO    [SSL] Command: certbot certonly -n --config /etc/letsencrypt.ini --work-dir /tmp/letsencrypt-lib --logs-dir /data/logs --cert-name npm-3 --agree-tos --authenticator webroot -m supertlux@gmail.com --preferred-challenges http --domains LAYODEVOPS.JO3.ORG
+2026-10-29T18:18:45.120Z INFO    [Nginx] Reloading Nginx
+2026-10-29T18:18:45.157Z WARN    [Express] Saving debug log to /data/logs/letsencrypt.log
+Some challenges have failed.
+Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /data/logs/letsencrypt.log or re-run Certbot with -v for more details.
+
+2026-10-29T18:20:31.942Z INFO    [Nginx] Reloading Nginx
+2026-10-29T18:20:31.967Z INFO    [SSL] Requesting LetsEncrypt certificates for Cert #4: layodevops.jo3.org
+2026-10-29T18:20:31.967Z INFO    [SSL] Command: certbot certonly -n --config /etc/letsencrypt.ini --work-dir /tmp/letsencrypt-lib --logs-dir /data/logs --cert-name npm-4 --agree-tos --authenticator webroot -m supertlux@gmail.com --preferred-challenges http --domains layodevops.jo3.org
+2026-10-29T18:20:37.877Z INFO    [Nginx] Reloading Nginx
+2026-10-29T18:20:37.914Z WARN    [Express] Saving debug log to /data/logs/letsencrypt.log
+Some challenges have failed.
+Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /data/logs/letsencrypt.log or re-run Certbot with -v for more details.
+
+2026-10-29T18:25:11.267Z INFO    [Global] PID 232 received SIGTERM
+2026-10-29T18:25:16.997Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-10-29T18:25:17.187Z INFO    [Migrate] Current database version: none
+2026-10-29T18:25:17.246Z INFO    [Setup] Logrotate Timer initialized
+2026-10-29T18:25:17.259Z INFO    [Setup] Logrotate completed.
+2026-10-29T18:25:17.351Z INFO    [Global] IP Ranges fetch is enabled
+2026-10-29T18:25:17.352Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-29T18:25:17.354Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-29T18:25:17.415Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-29T18:25:17.461Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-29T18:25:17.509Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-10-29T18:25:17.509Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-29T18:25:17.513Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-10-29T18:25:17.517Z INFO    [SSL] Completed SSL cert renew process
+2026-10-29T18:25:17.517Z INFO    [Global] Backend PID 228 listening on port 3000 ...
+2026-10-29T18:25:23.862Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-29T18:25:59.041Z INFO    [Nginx] Reloading Nginx
+2026-10-29T18:28:30.901Z INFO    [Nginx] Reloading Nginx
+2026-10-29T18:28:30.921Z INFO    [SSL] Requesting LetsEncrypt certificates for Cert #5: layodevops.jo3.org
+2026-10-29T18:28:30.922Z INFO    [SSL] Command: certbot certonly -n --config /etc/letsencrypt.ini --work-dir /tmp/letsencrypt-lib --logs-dir /data/logs --cert-name npm-5 --agree-tos --authenticator webroot -m supertlux@gmail.com --preferred-challenges http --domains layodevops.jo3.org
+2026-10-29T18:28:36.849Z INFO    [Nginx] Reloading Nginx
+2026-10-29T18:28:36.884Z WARN    [Express] Saving debug log to /data/logs/letsencrypt.log
+Some challenges have failed.
+Ask for help or search for solutions at https://community.letsencrypt.org. See the logfile /data/logs/letsencrypt.log or re-run Certbot with -v for more details.
+
+2026-10-29T18:40:51.692Z INFO    [Remote Version] Fetching https://api.github.com/repos/NginxProxyManager/nginx-proxy-manager/releases/latest
+2026-10-29T18:41:07.861Z INFO    [Global] PID 228 received SIGTERM
+2026-10-30T11:36:57.787Z INFO    [Global] Using Sqlite: /data/database.sqlite
+2026-10-30T11:36:58.167Z INFO    [Migrate] Current database version: none
+2026-10-30T11:36:58.225Z INFO    [Setup] Logrotate Timer initialized
+2026-10-30T11:36:58.243Z INFO    [Setup] Logrotate completed.
+2026-10-30T11:36:58.352Z INFO    [Global] IP Ranges fetch is enabled
+2026-10-30T11:36:58.352Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-30T11:36:58.354Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-30T11:36:58.430Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-30T11:36:58.481Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-30T11:36:58.522Z INFO    [SSL] Let's Encrypt Renewal Timer initialized
+2026-10-30T11:36:58.522Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T11:36:58.526Z INFO    [IP Ranges] IP Ranges Renewal Timer initialized
+2026-10-30T11:36:58.530Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T11:36:58.531Z INFO    [Global] Backend PID 234 listening on port 3000 ...
+2026-10-30T12:36:58.523Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T12:36:58.525Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T13:36:58.524Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T13:36:58.526Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T14:36:58.524Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T14:36:58.526Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T15:36:58.525Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T15:36:58.527Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T16:36:58.527Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T16:36:58.528Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T17:36:58.526Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-30T17:36:58.527Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-30T17:36:58.530Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T17:36:58.532Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T17:36:58.573Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-30T17:36:58.596Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-30T17:36:58.685Z INFO    [Nginx] Reloading Nginx
+2026-10-30T18:36:58.530Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T18:36:58.532Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T19:36:58.532Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T19:36:58.533Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T20:36:58.532Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T20:36:58.533Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T21:36:58.533Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T21:36:58.534Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T22:36:58.533Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T22:36:58.534Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T23:36:58.527Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-30T23:36:58.528Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-30T23:36:58.533Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-30T23:36:58.534Z INFO    [SSL] Completed SSL cert renew process
+2026-10-30T23:36:58.571Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-30T23:36:58.598Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-30T23:36:58.682Z INFO    [Nginx] Reloading Nginx
+2026-10-31T00:36:58.534Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T00:36:58.536Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T01:36:58.535Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T01:36:58.536Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T02:36:58.535Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T02:36:58.537Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T03:36:58.536Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T03:36:58.537Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T04:36:58.538Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T04:36:58.539Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T05:36:58.528Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-31T05:36:58.529Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-31T05:36:58.538Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T05:36:58.539Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T05:36:58.576Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-31T05:36:58.599Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-31T05:36:58.679Z INFO    [Nginx] Reloading Nginx
+2026-10-31T06:36:58.539Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T06:36:58.541Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T07:36:58.540Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T07:36:58.541Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T08:36:58.541Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T08:36:58.542Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T09:36:58.541Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T09:36:58.542Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T10:36:58.542Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T10:36:58.543Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T11:36:58.530Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-31T11:36:58.530Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-31T11:36:58.542Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T11:36:58.543Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T11:36:58.581Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-31T11:36:58.606Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-31T11:36:58.662Z INFO    [Nginx] Reloading Nginx
+2026-10-31T12:36:58.542Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T12:36:58.544Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T13:36:58.541Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T13:36:58.542Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T14:36:58.542Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T14:36:58.543Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T15:36:58.542Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T15:36:58.543Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T16:36:58.542Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T16:36:58.543Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T17:36:58.530Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-31T17:36:58.531Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-31T17:36:58.542Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T17:36:58.543Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T17:36:58.577Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-31T17:36:58.606Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-31T17:36:58.671Z INFO    [Nginx] Reloading Nginx
+2026-10-31T18:36:58.542Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T18:36:58.543Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T19:36:58.543Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T19:36:58.544Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T20:36:58.544Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T20:36:58.545Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T21:36:58.544Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T21:36:58.545Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T22:36:58.545Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T22:36:58.546Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T23:36:58.530Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-10-31T23:36:58.530Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-10-31T23:36:58.545Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-10-31T23:36:58.546Z INFO    [SSL] Completed SSL cert renew process
+2026-10-31T23:36:58.647Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-10-31T23:36:58.672Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-10-31T23:36:58.729Z INFO    [Nginx] Reloading Nginx
+2026-11-01T00:36:58.547Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T00:36:58.549Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T01:36:58.548Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T01:36:58.549Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T02:36:58.549Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T02:36:58.550Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T03:36:58.550Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T03:36:58.551Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T04:36:58.551Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T04:36:58.552Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T05:36:58.531Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-01T05:36:58.531Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-01T05:36:58.555Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T05:36:58.556Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T05:36:58.584Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-01T05:36:58.606Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-01T05:36:58.658Z INFO    [Nginx] Reloading Nginx
+2026-11-01T06:36:58.556Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T06:36:58.557Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T07:36:58.557Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T07:36:58.558Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T08:36:58.558Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T08:36:58.559Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T09:36:58.557Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T09:36:58.559Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T10:36:58.558Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T10:36:58.559Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T11:36:58.277Z INFO    [Setup] Logrotate completed.
+2026-11-01T11:36:58.531Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-01T11:36:58.531Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-01T11:36:58.614Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-01T11:36:58.616Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T11:36:58.617Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T11:36:58.657Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-01T11:36:58.718Z INFO    [Nginx] Reloading Nginx
+2026-11-01T12:36:58.616Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T12:36:58.618Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T13:36:58.617Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T13:36:58.618Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T14:36:58.617Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T14:36:58.618Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T15:36:58.617Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T15:36:58.618Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T16:36:58.616Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T16:36:58.617Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T17:36:58.532Z INFO    [IP Ranges] Fetching IP Ranges from online services...
+2026-11-01T17:36:58.532Z INFO    [IP Ranges] Fetching https://ip-ranges.amazonaws.com/ip-ranges.json
+2026-11-01T17:36:58.576Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v4
+2026-11-01T17:36:58.606Z INFO    [IP Ranges] Fetching https://www.cloudflare.com/ips-v6
+2026-11-01T17:36:58.619Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T17:36:58.620Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T17:36:58.669Z INFO    [Nginx] Reloading Nginx
+2026-11-01T18:36:58.619Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T18:36:58.620Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T19:36:58.620Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T19:36:58.621Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T20:36:58.620Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T20:36:58.621Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T21:36:58.622Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T21:36:58.623Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T22:36:58.622Z INFO    [SSL] Renewing SSL certs expiring within 30 days ...
+2026-11-01T22:36:58.623Z INFO    [SSL] Completed SSL cert renew process
+2026-11-01T23:00:38.295Z INFO    [Global] PID 234 received SIGTERM
