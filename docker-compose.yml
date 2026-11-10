@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   db:
     image: postgres:16-alpine
@@ -20,7 +19,7 @@ services:
       retries: 5
 
   backend:
-    build: ./backend
+    image: ghcr.io/daradjango12/layodevops-backend:${IMAGE_TAG:-latest}
     container_name: realworld_backend
     restart: on-failure:5
     environment:
@@ -42,7 +41,7 @@ services:
         condition: service_healthy
 
   frontend:
-    build: ./frontend
+    image: ghcr.io/daradjango12/layodevops-frontend:${IMAGE_TAG:-latest}
     container_name: realworld_frontend
     restart: always
     ports:
