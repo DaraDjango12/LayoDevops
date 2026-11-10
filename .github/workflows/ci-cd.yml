@@ -98,6 +98,7 @@ jobs:
             ${{ steps.image.outputs.owner }}/layodevops-backend:latest
 
 
+
   deploy:
     name: Deploy to Ubuntu Server
     runs-on: ubuntu-latest
@@ -113,6 +114,7 @@ jobs:
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
           DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
         run: |
           mkdir -p ~/.ssh
           chmod 700 ~/.ssh
@@ -120,6 +122,8 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           echo "$DEPLOY_KNOWN_HOSTS" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
+          echo "Checking registered SSH host key..."
+          ssh-keygen -F "$DEPLOY_HOST" -f ~/.ssh/known_hosts
 
       - name: Deploy application
         env:
@@ -131,5 +135,32 @@ jobs:
             -o BatchMode=yes \
             -o StrictHostKeyChecking=yes \
             "$DEPLOY_USER@$DEPLOY_HOST" \
-            "cd ~/LayoDevopsConduit/realworld-example-app && sudo docker compose pull backend frontend && sudo IMAGE_TAG=$IMAGE_TAG docker compose up -d --no-deps backend frontend"
+            "IMAGE_TAG='$IMAGE_TAG' bash -s" <<'REMOTE'
+              set -e
+              cd ~/LayoDevopsConduit/realworld-example-app
+
+              echo "Pulling latest application images..."
+              sudo docker compose pull backend frontend
+
+              echo "Updating application containers..."
+              sudo env IMAGE_TAG="$IMAGE_TAG" docker compose up -d --no-deps backend frontend
+
+              echo "Running application health checks..."
+
+              for attempt in $(seq 1 12); do
+                if curl -fsS http://localhost:3000/ >/dev/null \
+                  && curl -fsS http://localhost:3001/api/tags >/dev/null \
+                  && sudo docker compose exec -T db pg_isready >/dev/null 2>&1; then
+                  echo "SUCCESS: Frontend, backend and database are healthy."
+                  exit 0
+                fi
+
+                echo "Health check attempt $attempt/12 failed. Retrying in 10 seconds..."
+                sleep 10
+              done
+
+              echo "ERROR: Application health checks failed."
+              sudo docker compose ps
+              exit 1
+          REMOTE
 
