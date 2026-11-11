@@ -125,7 +125,8 @@ jobs:
           echo "Checking registered SSH host key..."
           ssh-keygen -F "$DEPLOY_HOST" -f ~/.ssh/known_hosts
 
-      - name: Deploy application
+
+      - name: Deploy application with automatic rollback
         env:
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
           DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
@@ -136,31 +137,69 @@ jobs:
             -o StrictHostKeyChecking=yes \
             "$DEPLOY_USER@$DEPLOY_HOST" \
             "IMAGE_TAG='$IMAGE_TAG' bash -s" <<'REMOTE'
-              set -e
-              cd ~/LayoDevopsConduit/realworld-example-app
+          set -u
+          cd ~/LayoDevopsConduit/realworld-example-app
 
-              echo "Pulling latest application images..."
-              sudo docker compose pull backend frontend
+          TAG_FILE=".last_deployed_image_tag"
+          PREVIOUS_TAG=$(sudo cat "$TAG_FILE")
 
-              echo "Updating application containers..."
-              sudo env IMAGE_TAG="$IMAGE_TAG" docker compose up -d --no-deps backend frontend
+          if [ -z "$PREVIOUS_TAG" ]; then
+            echo "ERROR: No previous deployment tag found."
+            exit 1
+          fi
 
-              echo "Running application health checks..."
+          echo "Previous release: $PREVIOUS_TAG"
+          echo "New release: $IMAGE_TAG"
 
-              for attempt in $(seq 1 12); do
-                if curl -fsS http://localhost:3000/ >/dev/null \
-                  && curl -fsS http://localhost:3001/api/tags >/dev/null \
-                  && sudo docker compose exec -T db pg_isready >/dev/null 2>&1; then
-                  echo "SUCCESS: Frontend, backend and database are healthy."
-                  exit 0
-                fi
+          check_health() {
+            for attempt in $(seq 1 12); do
+              if curl -fsS http://localhost:3000/ >/dev/null \
+                && curl -fsS http://localhost:3001/api/tags >/dev/null \
+                && sudo docker compose exec -T db pg_isready >/dev/null 2>&1; then
+                echo "Frontend, backend and database are healthy."
+                return 0
+              fi
 
-                echo "Health check attempt $attempt/12 failed. Retrying in 10 seconds..."
-                sleep 10
-              done
+              echo "Health check $attempt/12 failed. Retrying in 10 seconds..."
+              sleep 10
+            done
+            return 1
+          }
 
-              echo "ERROR: Application health checks failed."
+          rollback() {
+            echo "Deployment failed. Restoring previous release: $PREVIOUS_TAG"
+
+            if sudo env IMAGE_TAG="$PREVIOUS_TAG" docker compose up -d --no-deps backend frontend \
+              && check_health; then
+              echo "ROLLBACK SUCCESSFUL."
+            else
+              echo "CRITICAL: Rollback could not be verified."
               sudo docker compose ps
-              exit 1
+            fi
+
+            exit 1
+          }
+
+          echo "Pulling new application images..."
+          if ! sudo env IMAGE_TAG="$IMAGE_TAG" docker compose pull backend frontend; then
+            echo "Image pull failed. Existing deployment remains unchanged."
+            exit 1
+          fi
+
+          echo "Starting new application release..."
+          if ! sudo env IMAGE_TAG="$IMAGE_TAG" docker compose up -d --no-deps backend frontend; then
+            rollback
+          fi
+
+          echo "Checking new deployment..."
+          if ! check_health; then
+            rollback
+          fi
+
+          echo "$IMAGE_TAG" | sudo tee "$TAG_FILE.tmp" >/dev/null
+          sudo mv "$TAG_FILE.tmp" "$TAG_FILE"
+
+          echo "SUCCESS: Deployment verified."
+          echo "Recorded release: $IMAGE_TAG"
           REMOTE
 
