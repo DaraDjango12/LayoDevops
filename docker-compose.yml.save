@@ -1,0 +1,63 @@
+services:
+  # --- Secure Database Node ---
+  db:
+    image: postgres:16-alpine
+    container_name: realworld_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: realworld_user
+      POSTGRES_PASSWORD: supertluxe
+      POSTGRES_DB: realworld_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+    # Notice: No external host port mapping here. 
+    # This completely hides the database from the public internet.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U realworld_user -d realworld_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # --- Node.js API Service Backend ---
+  backend:
+    build: ./backend
+    container_name: realworld_backend
+    restart: on-failure:5
+    environment:
+      - NODE_ENV=production
+      - DB_USERNAME=realworld_user
+      - DB_PASSWORD=supertluxe
+      - DB_DATABASE=realworld_db
+      - DB_HOST=db
+      - DB_DIALECT=postgres
+    ports:
+      - "127.0.0.1:3001:3001"
+    networks:
+      - app-network
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # --- React Interface Frontend ---
+  frontend:
+    build: ./frontend
+    container_name: realworld_frontend
+    restart: always
+    ports:
+      - "127.0.0.1:3000:80"
+    networks:
+      - app-network
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  pgdata:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
+

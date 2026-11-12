@@ -1,0 +1,78 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: realworld_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: realworld_user
+      POSTGRES_PASSWORD: supertluxe
+      POSTGRES_DB: realworld_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U realworld_user -d realworld_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    image: ghcr.io/daradjango12/layodevops-backend:${IMAGE_TAG:-latest}
+    container_name: realworld_backend
+    restart: on-failure:5
+    environment:
+      - NODE_ENV=production
+      - DB_USER=realworld_user
+      - DB_USERNAME=realworld_user
+      - DB_PASSWORD=supertluxe
+      - DB_DATABASE=realworld_db
+      - DB_HOST=db
+      - DB_DIALECT=postgres
+      - DATABASE_URL=postgres://realworld_user:supertluxe@db:5432/realworld_db
+
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+    depends_on:
+      db:
+        condition: service_healthy
+
+  frontend:
+    image: ghcr.io/daradjango12/layodevops-frontend:${IMAGE_TAG:-latest}
+    container_name: realworld_frontend
+    restart: always
+    ports:
+      - "3000:80"
+    networks:
+      - app-network
+    depends_on:
+      backend:
+        condition: service_healthy
+
+  nginx-proxy-manager:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: realworld_npm
+    restart: always
+    ports:
+      - '80:80'
+      - '443:443'
+      - '81:81'
+    volumes:
+      - ./npm/data:/data
+      - ./npm/letsencrypt:/etc/letsencrypt
+    networks:
+      - app-network
+
+
+
+volumes:
+  pgdata:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge
+
