@@ -31,11 +31,12 @@ function LoginForm({ onError }) {
         type="email"
         name="email"
         required
-        placeholder="Email"
+        placeholder="something@gmail.com"
         value={email}
         handler={inputHandler}
         autoFocus
       ></FormFieldset>
+      
 
       <FormFieldset
         name="password"
